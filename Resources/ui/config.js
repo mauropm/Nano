@@ -13,7 +13,8 @@
 	ui.cfg.color = {
 		bg: '#ffffff',
 		top: '#ff0000',
-		nav: '#ff0000'
+		nav: '#ff0000',
+		navalt: '#000000'
 	};
 	
 	ui.cfg.nav = [

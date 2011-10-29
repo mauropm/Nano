@@ -32,3 +32,4 @@ Logfile initialized
 [INFO] Launching application ... Nano
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.nanofied.nano/.NanoActivity }
 
+[INFO] Android Emulator has exited
