@@ -1,14 +1,19 @@
 (function(){
 	ui.table = {};
 	
-	ui.table.view = Ti.UI.createView({
-		height: ui.cfg.size.height - (ui.cfg.size.top + ui.cfg.size.nav),
-		width: ui.cfg.size.width,
-		top: ui.cfg.size.top,
-		backgroundColor: ui.cfg.color.bg
-	});
+	ui.table.create = function() { 
+		var view = Ti.UI.createView({
+			height: config.size.height - (config.size.top + config.size.nav),
+			width: config.size.width,
+			top: config.size.top,
+			backgroundColor: config.color.bg
+		});
+		return view;
+	}
 	
 	Ti.App.addEventListener('table:open', function(){
-		ui.win.add(ui.table.view);
+		if(typeof(active.view) !== 'undefined'){ active.win.remove(active.view); }
+		active.view = ui.table.create();
+		active.win.add(active.view);
 	});
 })();

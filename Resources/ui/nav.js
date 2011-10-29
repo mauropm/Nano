@@ -1,46 +1,45 @@
 (function(){
-	var nav = ui.cfg.nav;
-	var count = nav.length;
-	var items = [];
-	
 	ui.nav = {};
 	
-	ui.nav.view = Ti.UI.createView({
-		height: ui.cfg.size.nav,
-		width: ui.cfg.size.width,
-		backgroundColor: ui.cfg.color.nav,
-		bottom: 0
-	});
+	var count = config.nav.length;
+	var navwidth = Math.round(config.size.width / count);
 	
-	ui.nav.populate = function(){
-		var i;
-		var navwidth = Math.round(ui.cfg.size.width / count);
-		for(i = 0; i < count; i++){
+	var items = [];
+	
+	ui.nav.create = function() {
+		var view = Ti.UI.createView({
+			height: config.size.nav,
+			width: config.size.width,
+			backgroundColor: config.color.nav,
+			bottom: 0
+		});
+		for(var i = 0; i < count; i++){
 			items[i] = Ti.UI.createView({
 				id: i,
-				height: ui.cfg.size.nav,
+				height: config.size.nav,
 				width: navwidth,
 				left: i * navwidth
 			});
 			items[i].addEventListener('click', function(e){
-				Ti.App.fireEvent('nav:click', {id: e.source.id});
+				ui.nav.click(e.source.id);
 			});
-			
-			ui.nav.view.add(items[i]);
+			view.add(items[i]);
 		}
+		items[0].fireEvent('click');
+		return view;
 	};
 	
-	Ti.App.addEventListener('nav:click', function(item){
-		var i;
-		for(i in items){ if (items.hasOwnProperty(i)){ items[i].backgroundColor = ui.cfg.color.nav; } }
-		items[item.id].backgroundColor = ui.cfg.color.navalt;
-		if(typeof(ui[nav[item.id].title.toLowerCase()]) === 'undefined'){ Ti.include(nav[item.id].url); }
-		Ti.App.fireEvent(nav[item.id].title.toLowerCase() + ':open');
-	});
+	ui.nav.click = function(item) {
+		var title = config.nav[item].title.toLowerCase();
+		var url = config.nav[item].url;
+		for(var i = 0; i < count; i++){ items[i].backgroundColor = config.color.nav; }
+		items[item].backgroundColor = config.color.navalt;
+		if(typeof(ui[title]) === 'undefined'){ Ti.include(url); }
+		Ti.App.fireEvent(title + ':open');
+	};
 	
 	Ti.App.addEventListener('ui:init', function(){
-		ui.nav.populate();
-		Ti.App.fireEvent('nav:click', {id: 0});
-		ui.win.add(ui.nav.view);
+		active.nav = ui.nav.create();
+		active.win.add(active.nav);
 	});
 })();
