@@ -1,12 +1,13 @@
-Welcome to your Appcelerator Titanium Mobile Project
+Welcome to Nano,
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+Nano is a multi-platform Appcelerator Titanium user interface. Users of Nano enjoy speedy development times, hassle free interfacing, and memory conseverative code.
 
+Currently Nano is in development, and feedback is appreciated (hello@nanofied.com).
 
+Enjoy!
 
 ----------------------------------
-Stuff our legal folk make us say:
+Stuff Appcelerator's legal folk make us say:
 
 Appcelerator, Appcelerator Titanium and associated marks and logos are 
 trademarks of Appcelerator, Inc. 
@@ -15,4 +16,3 @@ Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
 
 Titanium is licensed under the Apache Public License (Version 2). Please
 see the LICENSE file for the full license.
-
