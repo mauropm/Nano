@@ -18,9 +18,9 @@
 	};
 	
 	ui.cfg.nav = [
-	    {title: 'View 1', img: 'img/1.png', url: 'views/1.js'},
-	    {title: 'View 2', img: 'img/2.png', url: 'views/2.js'},
-	    {title: 'View 3', img: 'img/3.png', url: 'views/3.js'}
+	    {title: 'Scroll', url: 'ui/scroll.js'},
+	    {title: 'Table', url: 'ui/table.js'},
+	    {title: 'Settings', url: 'ui/settings.js'}
 	];
 	
 	ui.cfg.orientation = [Ti.UI.PORTRAIT,Ti.UI.UPSIDE_PORTRAIT];

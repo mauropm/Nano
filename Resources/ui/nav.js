@@ -1,7 +1,7 @@
 (function(){
+	var nav = ui.cfg.nav;
+	var count = nav.length;
 	var items = [];
-	var icons = [];
-	var hints = [];
 	
 	ui.nav = {};
 	
@@ -14,8 +14,6 @@
 	
 	ui.nav.populate = function(){
 		var i;
-		var nav = ui.cfg.nav;
-		var count = nav.length;
 		var navwidth = Math.round(ui.cfg.size.width / count);
 		for(i = 0; i < count; i++){
 			items[i] = Ti.UI.createView({
@@ -36,6 +34,8 @@
 		var i;
 		for(i in items){ if (items.hasOwnProperty(i)){ items[i].backgroundColor = ui.cfg.color.nav; } }
 		items[item.id].backgroundColor = ui.cfg.color.navalt;
+		if(typeof(ui[nav[item.id].title.toLowerCase()]) === 'undefined'){ Ti.include(nav[item.id].url); }
+		Ti.App.fireEvent(nav[item.id].title.toLowerCase() + ':open');
 	});
 	
 	Ti.App.addEventListener('ui:init', function(){

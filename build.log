@@ -6,15 +6,10 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.015795 seconds on emulator to get ready
+[DEBUG] waited 0.015690 seconds on emulator to get ready
 [DEBUG] com.nanofied.nano installed? True
 [INFO] Fastdev server running, deploying in Fastdev mode
 [INFO] Copying project resources..
-[TRACE] COPYING MODIFIED FILE: /Users/Nanofied/Desktop/Projects/Nano/Resources/app.js => /Users/Nanofied/Desktop/Projects/Nano/build/android/bin/assets/Resources/app.js
-[TRACE] COPYING CREATED FILE: /Users/Nanofied/Desktop/Projects/Nano/Resources/ui/config.js => /Users/Nanofied/Desktop/Projects/Nano/build/android/bin/assets/Resources/ui/config.js
-[TRACE] COPYING CREATED FILE: /Users/Nanofied/Desktop/Projects/Nano/Resources/ui/init.js => /Users/Nanofied/Desktop/Projects/Nano/build/android/bin/assets/Resources/ui/init.js
-[TRACE] COPYING CREATED FILE: /Users/Nanofied/Desktop/Projects/Nano/Resources/ui/nav.js => /Users/Nanofied/Desktop/Projects/Nano/build/android/bin/assets/Resources/ui/nav.js
-[TRACE] COPYING CREATED FILE: /Users/Nanofied/Desktop/Projects/Nano/Resources/ui/top.js => /Users/Nanofied/Desktop/Projects/Nano/build/android/bin/assets/Resources/ui/top.js
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
 [DEBUG] found drawable-long-land-hdpi splash screen at /Users/Nanofied/Desktop/Projects/Nano/Resources/android/images/res-long-land-hdpi/default.png
@@ -32,4 +27,3 @@ Logfile initialized
 [INFO] Launching application ... Nano
 [TRACE] Launch output: Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.nanofied.nano/.NanoActivity }
 
-[INFO] Android Emulator has exited
